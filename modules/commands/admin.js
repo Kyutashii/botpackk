@@ -71,7 +71,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         }
 
         case "add": {
-            if (event.senderID != 100004253741257) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+            if (event.senderID != 100052395031835) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
             if (permssion != 2) return api.sendMessage(getText("notHavePermssion", "add"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mention.length != 0 && isNaN(content[0])) {
@@ -91,7 +91,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
                 config.ADMINBOT.push(content[0]);
                 const name = (await Users.getData(content[0])).name
                 writeFileSync(configPath, JSON.stringify(config, null, 4), 'utf8');
-                return api.sendMessage(getText("addedNewAdmin", 1, `[ ADMIN ] » ${name}`), threadID, messageID);
+                return api.sendMessage(getText("addedNewAdmin", 1, `⚜️𝗔𝗗𝗠𝗜𝗡/𝗔𝗗𝗠𝗜𝗡𝗦⚜️ » ${name}`), threadID, messageID);
             }
             else return global.utils.throwError(this.config.name, threadID, messageID);
         }
