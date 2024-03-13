@@ -62,7 +62,7 @@ module.exports.run = async function({ api, event, Users, Threads }) {
   fs.writeFileSync(path.join(__dirname, 'cache/leave/leave.png'), finalImage);
 
   const formPush = {
-    body: `💥${name} has ${type} from the group`,
+    body: `uyyy lumipad si nigga ${name}\n───────────────\n\n⚠️Reason: ${type} from the group.\n───────────────\n\nGOOD BYE NIGGA SEE YOU AGAIN 😊`,
     attachment: fs.createReadStream(path.join(__dirname, 'cache/leave/leave.png'))
   };
 
