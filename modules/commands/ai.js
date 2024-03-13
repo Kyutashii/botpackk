@@ -25,7 +25,7 @@ module.exports.run = async function ({ api, event, args }) {
       api.setMessageReaction('⏱️', event.messageID, () => {}, true);
       const response = await herc.question({ model: 'v3', content: prompt });
       api.sendMessage(response.reply, event.threadID, event.messageID);
-      api.setMessageReaction('', event.messageID, () => {}, true);
+      api.setMessageReaction('✅', event.messageID, () => {}, true);
     }
   } catch (error) {
     api.sendMessage('⚠️ Something went wrong: ' + error, event.threadID, event.messageID);
