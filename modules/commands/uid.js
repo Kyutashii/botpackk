@@ -20,7 +20,7 @@ module.exports.run = function ({ api, event }) {
   } else {
     for (const mentionID in event.mentions) {
       const mentionName = event.mentions[mentionID];
-      api.sendMessage(`${mentionName.replace('@', '')}: ${mentionID}`, event.threadID);
+      api.sendMessage(`𝗛𝗠𝗠 𝗬𝗢𝗨𝗥 𝗨𝗜𝗗? 🤔\n\n${mentionName.replace('@', '')}: ${mentionID}`, event.threadID);
     }
   }
 };
