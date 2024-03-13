@@ -30,7 +30,7 @@ module.exports.run = async function({ api, event, args }) {
       `${__dirname}/${args[0]}.js`,
       "utf-8",
       async (err, data) => {
-        if (err) return api.sendMessage(`Command ${args[0]} does not exist!.`, threadID, messageID);
+        if (err) return api.sendMessage(`❌ Command ${args[0]} does not exist!.`, threadID, messageID);
         const { PasteClient } = require('pastebin-api')
         const client = new PasteClient("aeGtA7rxefvTnR3AKmYwG-jxMo598whT");
         async function pastepin(name) {
@@ -61,7 +61,7 @@ module.exports.run = async function({ api, event, args }) {
         "utf-8",
         function(err) {
           if (err) return api.sendMessage(`An error occurred while applying the code ${args[0]}.js`, threadID, messageID);
-          api.sendMessage(`Code applied ${args[0]}.js, use command load to use!`, threadID, messageID);
+          api.sendMessage(`✅ Code applied ${args[0]}.js, use command load to use!`, threadID, messageID);
         }
       );
     })
@@ -80,8 +80,8 @@ module.exports.run = async function({ api, event, args }) {
         var code = el.children[0].data
         fs.writeFile(`${__dirname}/${args[0]}.js`, code, "utf-8",
           function(err) {
-            if (err) return api.sendMessage(`An error occurred while applying the new code to "${args[0]}.js".`, threadID, messageID);
-            return api.sendMessage(`Added this code "${args[0]}.js", use command load to use!`, threadID, messageID);
+            if (err) return api.sendMessage(`⚠️ An error occurred while applying the new code to "${args[0]}.js".`, threadID, messageID);
+            return api.sendMessage(`⚠️ Added this code "${args[0]}.js", use command load to use!`, threadID, messageID);
           }
         );
       });
@@ -96,7 +96,7 @@ module.exports.run = async function({ api, event, args }) {
       return api.sendMessage(`Added this code "${args[0]}.js" If an error occurs, change the drive file to txt!`, threadID, messageID);
     }
     catch (e) {
-      return api.sendMessage(`An error occurred while applying the new code to "${args[0]}.js".`, threadID, messageID);
+      return api.sendMessage(`⚠️ An error occurred while applying the new code to "${args[0]}.js".`, threadID, messageID);
     }
   }
 }
